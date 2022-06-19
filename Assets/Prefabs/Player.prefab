@@ -143,6 +143,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7179650311594195320}
+  - {fileID: 7179650311594195332}
   SimulationBehaviours: []
 --- !u!143 &7179650311594195321
 CharacterController:
@@ -190,9 +191,9 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   gravity: -20
   jumpImpulse: 8
-  acceleration: 10
-  braking: 10
-  maxSpeed: 2
+  acceleration: 100
+  braking: 100
+  maxSpeed: 5
   rotationSpeed: 15
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
@@ -208,6 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f567b2eb492254da3dec3b30677057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  networkCharacterController: {fileID: 7179650311594195320}
+  moveSpeed: 5
 --- !u!1 &7179650311704512273
 GameObject:
   m_ObjectHideFlags: 0
