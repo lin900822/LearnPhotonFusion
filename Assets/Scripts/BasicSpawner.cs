@@ -67,6 +67,9 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
         if (Input.GetKey(KeyCode.D))
             data.movementInput += Vector3.right;
 
+        data.buttons.Set(InputButtons.JUMP, Input.GetKey(KeyCode.Space));
+        data.buttons.Set(InputButtons.FIRE, Input.GetKey(KeyCode.Mouse0));
+
         input.Set(data);
     }
 
