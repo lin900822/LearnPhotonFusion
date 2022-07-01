@@ -16,6 +16,9 @@ public class PlayerController : NetworkBehaviour
     private Image hpBar = null;
 
     [SerializeField]
+    private MeshRenderer meshRenderer = null;
+
+    [SerializeField]
     private float moveSpeed = 15f;
 
     [SerializeField]
@@ -82,5 +85,29 @@ public class PlayerController : NetworkBehaviour
     private static void OnHpChanged(Changed<PlayerController> changed)
     {
         changed.Behaviour.hpBar.fillAmount = (float)changed.Behaviour.Hp / changed.Behaviour.maxHp;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ChangeColor_RPC(Color.red);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ChangeColor_RPC(Color.green);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ChangeColor_RPC(Color.blue);
+        }
+    }
+
+    [Rpc(RpcSources.InputAuthority, RpcTargets.All)]
+    private void ChangeColor_RPC(Color newColor)
+    {
+        meshRenderer.material.color = newColor;
     }
 }

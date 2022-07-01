@@ -469,6 +469,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1458027373978065007, guid: 3cfb8accafc46ba4a8143f789d63bdd5,
     type: 3}
   hpBar: {fileID: 8355181690031096653}
+  meshRenderer: {fileID: 7179650310741014185}
   moveSpeed: 5
   maxHp: 100
   _Hp: 0
